@@ -1,0 +1,7 @@
+Otros comandos utiles
+
+check
+case when
+agrupacion logica where () or () | () and ()
+set default
+booleano true o false, sqlite(1 y 0)
