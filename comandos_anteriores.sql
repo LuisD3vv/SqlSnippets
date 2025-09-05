@@ -104,3 +104,5 @@ where serie_id in(2,22)
 group by serie_id
 -- Having toma el resultado de la funcion de agregacion.
 having numero_episodios > 10;
+
+
