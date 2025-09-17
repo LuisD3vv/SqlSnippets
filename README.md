@@ -1,14 +1,12 @@
--- Las funciones de agregacion son utilizadas para regresar un solo valor
+#Las funciones de agregacion son utilizadas para regresar un solo valor
 
-/*
- * tenemos a 
- * 
- * COUNT() suma las lineas
- * SUM() regresa la suma total de los valores en una columna
- * MIN() regresa el valor minimo
- * MAX() regresa el valor maximo
- * AVG() regresa el promedio de una columna
- * GROUP BY agrupa el resultado usando el valor comun en las columna 
+##tenemos a  
+ >COUNT() suma las lineas
+  SUM() regresa la suma total de los valores en una columna
+  MIN() regresa el valor minimo
+  MAX() regresa el valor maximo
+  AVG() regresa el promedio de una columna
+  GROUP BY agrupa el resultado usando el valor comun en las columna 
 
  Cuando usamos estas funciones, las columnas que no se seleccionaron
  deben de colocarse en un group by
@@ -38,3 +36,14 @@
    y se agruparanm por nombre sin repetirse
 */
 
+#sintaxis de case when
+>SELECT
+    columna1,
+    columna2,
+    CASE
+        WHEN condicion1 THEN resultado1
+        WHEN condicion2 THEN resultado2
+        ELSE resultado_por_defecto
+    END AS nueva_columna
+FROM
+    nombre_tabla;
