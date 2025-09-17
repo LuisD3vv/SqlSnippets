@@ -32,6 +32,7 @@ WHERE genero = 'drama';
 SELECT * FROM Series
 WHERE año_lanzamiento > 2010;
 
+
 -- Operadores de comparacion, permiten comparar valores
 --  Los mismos de cualquier lenguaje
 /*
@@ -64,43 +65,3 @@ where genero not in ('genero','Drama', 'Drama historico');
 
 SELECT * from Series
 where titulo LIKE '%The%';
-
--- Funciones de agregado, realizan calculos sobre grupos de valores y devuelven un unico valor.
-
--- sum(suma los valores de cada fila, a diferencia de count que solo cuenta las filas.)
-SELECT SUM(duracion) AS Total_Duracion from Episodios
-WHERE serie_id = 5;
-
---  Contar cantidad todal de filas o elementos.
-SELECT COUNT(*) from Episodios;
-
--- Conseguir el valor maximo de una columna
-
-SELECT titulo ,MAX(duracion) from Episodios;
-
--- El valor minimo
-
-SELECT  MIN(duracion) as minimo from Episodios;
-
--- Avg para promedios	
-
-select avg(duracion) from Episodios
-where series_id in (1,2);
-
--- Agrupar por resultados, Group by agrupa por valores unicos, es decir agrupa resultados unicos.
-SELECT serie_id, AVG(duracion) as promedio, SUM(duracion) as suma_duracion from Episodios
-where serie_id in (1,2)
-group by serie_id;
-
-select  serie_id,count(episodio_id) as count_episodios from Episodios group by 1;
-
-select  serie_id,MAX(duracion) from Episodios group by 1;
-
--- Clausula having, este aplica el filtro despues de el filtro, solo se utiza despues de haber aplicado funciones de agreagacion
-
-SELECT serie_id ,count(episodio_id) as numero_episodios
-from Episodios
-where serie_id in(2,22)
-group by serie_id
--- Having toma el resultado de la funcion de agregacion.
-having numero_episodios > 10;

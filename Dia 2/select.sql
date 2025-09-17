@@ -4,7 +4,10 @@
 SELECT * FROM Episodios;
 
 -- Y asi las que necesitemos solamente.
-SELECT episodio_id,titulo from Episodios;
+SELECT 
+    episodio_id, titulo
+FROM
+    Episodios;
 
 -- Y con distict, para valores unicos dentro de una tabla | sin duplicados ,es una clausula
 
