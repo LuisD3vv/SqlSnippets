@@ -1,7 +1,8 @@
+
 # COMO FUNCIONA ORDER BY Y GROUP BY
 
 
-##Order 
+## Order 
 >Se uar para ordenar un conjunto de resultados de una consulta. Su propositoes presentarlos en un orden especifico, ya sea en orden ascendente o descendente
 
 ### Caracteristicas
