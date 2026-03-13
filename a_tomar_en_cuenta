@@ -1,0 +1,7 @@
+truco de comparacion
+
+> ANY  ≈ mayor que el mínimo
+> ALL  ≈ mayor que el máximo
+
+< ANY  ≈ menor que el máximo
+< ALL  ≈ menor que el mínimo
