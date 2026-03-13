@@ -42,10 +42,12 @@ todos los resultados atomicos, es decir, cada alumno
 tendra su promedio porque se sumaran todas sus columnas
 y se agruparanm por nombre sin repetirse
 
-
 count(*) es igual a count(fila_id), porque cuenta la fila completa,
 a diferencia de sum. que cuenta el mismo registro dependiendo de la condicion
 
 ## funciones de ventana
-
 ## rankigs
+## subconsultas escalares, de tabla, correlacionales y with.
+
+
+### podemos usar having y valores en un join claro que si
