@@ -1,8 +1,10 @@
-Otros comandos utiles
 check
 case when
 agrupacion logica where () or () | () and ()
 set default
+now()
+extract
+count(case when tipo = 'D' then 1 end), count ignora null
 booleano true o false, sqlite(1 y 0)
 
 Las funciones de agregacion son utilizadas para regresar un solo valor
@@ -39,3 +41,11 @@ GRUPO BY nombre;
 todos los resultados atomicos, es decir, cada alumno
 tendra su promedio porque se sumaran todas sus columnas
 y se agruparanm por nombre sin repetirse
+
+
+count(*) es igual a count(fila_id), porque cuenta la fila completa,
+a diferencia de sum. que cuenta el mismo registro dependiendo de la condicion
+
+## funciones de ventana
+
+## rankigs
