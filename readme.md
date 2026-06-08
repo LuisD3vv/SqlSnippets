@@ -1,8 +1,10 @@
-Otros comandos utiles
 check
 case when
 agrupacion logica where () or () | () and ()
 set default
+now()
+extract
+count(case when tipo = 'D' then 1 end), count ignora null
 booleano true o false, sqlite(1 y 0)
 
 Las funciones de agregacion son utilizadas para regresar un solo valor
@@ -39,3 +41,49 @@ GRUPO BY nombre;
 todos los resultados atomicos, es decir, cada alumno
 tendra su promedio porque se sumaran todas sus columnas
 y se agruparanm por nombre sin repetirse
+
+count(*) es igual a count(fila_id), porque cuenta la fila completa,
+a diferencia de sum. que cuenta el mismo registro dependiendo de la condicion
+
+## funciones de ventana
+## rankigs
+## subconsultas escalares, de tabla, correlacionales y with.
+
+
+### podemos usar having y valores en un join claro que si
+
+
+### Mas ejemplos utiles de sql
+select nombre,
+	cast(nombre as char) 
+from municipios m 
+
+select nombre, substr(nombre,1,1) from clientes -- extraer un cacho 
+
+select 
+	nombre, 
+	left(nombre,1), -- primera y ultima letra de una cadena
+	right(nombre,1)
+from clientes
+
+SELECT CONCAT(nombre, ' (', rfc_cliente, ') ') from clientes;
+
+select length(nombre) from clientes;
+
+select cast(extract(year from fecha) as int) from facturas -- cambiar tipo de dato el ejemploe sta mal pero asi funciona
+
+select current_database();
+
+select user;
+
+select current_schemas
+
+--  conocer el tipo de datos del atributo  muy util
+SELECT column_name, data_type, is_nullable
+FROM information_schema.columns
+WHERE table_name = 'facturas'
+  AND column_name = 'folio';
+
+
+
+
