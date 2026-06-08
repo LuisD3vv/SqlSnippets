@@ -49,7 +49,7 @@ ORDER BY primeEP ASC;
 WITH SeriesLanzadas AS (
 	SELECT
 	año_lanzamiento,
-	count(serie_id) AS total_series
+	count(*) AS total_series
 	FROM Series
 	WHERE genero = 'Ciencia ficción'
 	GROUP BY año_lanzamiento 
@@ -63,7 +63,7 @@ ORDER BY
 	año_lanzamiento ASC;
 
 
--- FUNCIONES DE VENTANA
+-- FUNCIONES DE VENTANA funciones de ventana que se utilizan para asignar clasificaciones a las filas de un conjunto de resultados, 
 
 -- Row_number() su funcion principal es asignar un numero consecutivo a cada fila
 -- Pero su verdadero uso esta en que se puede reiniciar el conteo para cada grupo de datos
@@ -106,9 +106,35 @@ SELECT
 FROM Series;
 
 
+/* Tambien existen otros metodos de rank nos ayudan a clasificar filas
+ * 
+ * dense_rank() si dos filas empatan, la siguiente fila tendra el segundo lugar
+ * 
+ * rank() si dos filas empatam en primer lugar, la segunda fila sera el tercer lugar
+ * (salta rangos y genera)
+ * 
+ * algo asi
+ * 
+ * --------------------------------------
+ * Salario	   RANK()		DENSE_RANK()		    
+ * 
+ * 5000			1				1 
+ * 4000			2				2
+ * 4000			2				2
+ * 3000			4   		    3 
+ * rank(se salta el la posicion 3 y continua con la fila que sigue en general del conteo)
+ * dense(Continua fluyendo sin importar las repeticiones, y el conteo de la tabla,es decir
+ * si hay 19 primeros lugares, el 20 sera la posicion 2, no el 20 como tal)
+ * --------------------------------------* 
+ * 
+ * */
+
+
 -- Expresiones Regulares
 
 select titulo,descripcion from Series
 -- que seleccione filas donde la columna contiene los sin considerar mayusculas o minusculas
 where descripcion REGEXP '(?i)los'; 
+
+
 
